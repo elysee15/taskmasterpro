@@ -29,9 +29,14 @@ COPY --from=dev-dependencies /app/node_modules ./node_modules
 COPY package.json package-lock.json* ./
 COPY . .
 
+ARG VITE_APP_API_URL
+ARG API_URL
+
+ENV VITE_APP_API_URL=${VITE_APP_API_URL}
+ENV API_URL=${API_URL}
+
 RUN npm run build && \
     npm prune --omit=dev
-
 
 # ==============================================================================
 # Stage 4: prod image
@@ -52,10 +57,9 @@ ENV NODE_ENV=production
 ENV PORT=3008
 ENV HOST=0.0.0.0
 
-EXPOSE $ENV
+EXPOSE $PORT
 
 USER reactapp
-
 
 ENTRYPOINT ["dumb-init", "--"]
 CMD ["npm", "run", "start"]

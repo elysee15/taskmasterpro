@@ -1,0 +1,56 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - VITE_APP_API_URL=http://json-server:8900
+        - API_URL=http://json-server:8900
+    ports:
+      - '3008:3008'
+    environment:
+      - NODE_ENV=production
+
+    container_name: taskmasterpro
+    depends_on:
+      - json-server
+    networks:
+      - taskmasterpro-network
+    restart: unless-stopped
+
+  json-server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    container_name: taskmasterpro-backend
+    ports:
+      - '8900:8900'
+    volumes:
+      - json-db:/data
+    restart: unless-stopped
+    networks:
+      - taskmasterpro-network
+    healthcheck:
+      test:
+        [
+          'CMD',
+          'wget',
+          '--no-verbose',
+          '--tries=1',
+          '--spider',
+          'http://localhost:8900',
+        ]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+networks:
+  taskmasterpro-network:
+    driver: bridge
+    name: taskmasterpro-network
+
+volumes:
+  json-db:

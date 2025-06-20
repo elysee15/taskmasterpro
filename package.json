@@ -5,6 +5,7 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production react-router build",
     "dev": "react-router dev",
+    "dev:all": "concurrently \"npm run start\" \"npm run serve\"",
     "start": "cross-env NODE_ENV=production react-router-serve ./build/server/index.js",
     "typecheck": "react-router typegen && tsc",
     "lint": "eslint .",
@@ -12,7 +13,7 @@
     "coverage": "vitest run --coverage",
     "format": "prettier --write .",
     "validate": "run-p \"test -- --run\" lint typecheck",
-    "serve": "json-server --delay 2000 --port 3002 --watch ./server/db.json"
+    "server:watch": "json-server --delay 2000 --port 3001 --watch ./server/db.json"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",

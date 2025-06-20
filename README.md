@@ -20,6 +20,10 @@ Start the development server with HMR:
 npm run dev
 ```
 
+### Technical choices
+
+Mon choix s'est basé sur React Router v7 pour sa flexibilité et pour la fait qu'elle se rapproche de la philosophie de base de ReactJs.
+
 Your application will be available at `http://localhost:5173`.
 
 ## Building for Production
@@ -37,10 +41,10 @@ npm run build
 To build and run using Docker:
 
 ```bash
-docker build -t my-app .
+docker build -t taskmasterpro .
 
 # Run the container
-docker run -p 3000:3000 my-app
+docker run -p 3008:3008 taskmasterpro
 ```
 
 The containerized application can be deployed to any platform that supports Docker, including:
