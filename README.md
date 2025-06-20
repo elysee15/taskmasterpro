@@ -41,10 +41,7 @@ npm run build
 To build and run using Docker:
 
 ```bash
-docker build -t taskmasterpro .
-
-# Run the container
-docker run -p 3008:3008 taskmasterpro
+docker-compose up --build
 ```
 
 The containerized application can be deployed to any platform that supports Docker, including:
