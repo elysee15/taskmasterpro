@@ -1,0 +1,90 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Configurer le projet",
+      "description": "Initialiser le dépôt Git et installer les dépendances de base.",
+      "priority": "high",
+      "completed": false
+    },
+    {
+      "id": 2,
+      "title": "Créer les composants UI",
+      "description": "Développer les composants Input, Button et Modal avec MUI.",
+      "priority": "medium",
+      "completed": true
+    },
+    {
+      "id": 3,
+      "title": "Mettre en place l’authentification",
+      "description": "Utiliser JWT pour gérer les connexions utilisateurs.",
+      "priority": "high",
+      "completed": false
+    },
+    {
+      "id": 4,
+      "title": "Intégrer l’API REST",
+      "description": "Utiliser Axios pour connecter le frontend à l’API de tâches.",
+      "priority": "low",
+      "completed": true
+    },
+    {
+      "id": 5,
+      "title": "Déployer l’application",
+      "description": "Déployer l’application sur Vercel avec une base de données en ligne.",
+      "priority": "medium",
+      "completed": false
+    },
+    {
+      "title": "test assignation",
+      "description": "test assignation",
+      "priority": "medium",
+      "userId": 1,
+      "createdAt": "2025-06-18T08:26:43.761Z",
+      "updatedAt": "2025-06-18T08:26:43.761Z",
+      "id": 6
+    },
+    {
+      "title": "gzdfgsdfgfdg",
+      "description": "rerzrrdsfdsfsdfsdf",
+      "priority": "high",
+      "userId": 1,
+      "status": "todo",
+      "createdAt": "2025-06-18T08:38:00.991Z",
+      "updatedAt": "2025-06-18T08:38:00.991Z",
+      "id": 7
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Alice Kone",
+      "email": "alice.kone@example.com",
+      "role": "admin"
+    },
+    {
+      "id": 2,
+      "name": "Brice N'Dri",
+      "email": "brice.ndri@example.com",
+      "role": "manager"
+    },
+    {
+      "id": 3,
+      "name": "Chloé Traoré",
+      "email": "chloe.traore@example.com",
+      "role": "user"
+    },
+    {
+      "id": 4,
+      "name": "David Kouassi",
+      "email": "david.kouassi@example.com",
+      "role": "user"
+    },
+    {
+      "id": 5,
+      "name": "Emma Diallo",
+      "email": "emma.diallo@example.com",
+      "role": "user"
+    }
+  ]
+}
